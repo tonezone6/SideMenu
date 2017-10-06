@@ -12,18 +12,21 @@ protocol ContentNavigationDelegate {
     func didTappedToggleButton()
 }
 
-class ContentNavigation: UINavigationController {
+class SideMenuContentNavigation: UINavigationController {
     
     var customDelegate: ContentNavigationDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.removeBarShadow()
         self.delegate = self
     }
 }
 
-extension ContentNavigation: UINavigationControllerDelegate {
+extension SideMenuContentNavigation: UINavigationControllerDelegate {
+    
+    //// Navigation stack controller setup
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         
@@ -43,5 +46,10 @@ extension ContentNavigation: UINavigationControllerDelegate {
     
     @objc func buttonAction() {
         customDelegate?.didTappedToggleButton()
+    }
+    
+    private func removeBarShadow() {
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
     }
 }

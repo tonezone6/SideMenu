@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ContainerVC-->
+        <!--Side Menu ContainerVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ContainerVC" id="BYZ-38-t0r" customClass="ContainerVC" customModule="SBSideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContainerVC" id="BYZ-38-t0r" customClass="SideMenuContainerVC" customModule="sideMenu_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZoA-GQ-cxK" userLabel="Side menu container">
-                                <rect key="frame" x="-245" y="0.0" width="245" height="568"/>
+                                <rect key="frame" x="-245" y="0.0" width="245" height="667"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="245" id="VZr-tT-Hmu"/>
                                 </constraints>
@@ -28,7 +28,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGY-9J-N1W" userLabel="Controller container">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="Wcv-FO-hyT" kind="embed" id="5ii-ZK-2Zy"/>
                                 </connections>
@@ -60,11 +60,11 @@
             <objects>
                 <viewController storyboardIdentifier="FirstVC" id="Rba-e2-QTy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cob-nz-7pC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9g-gG-y4m">
-                                <rect key="frame" x="60" y="197.5" width="200" height="110"/>
+                                <rect key="frame" x="87.5" y="246.5" width="200" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="97z-Es-Fal"/>
                                     <constraint firstAttribute="height" constant="110" id="9ad-aQ-0hN"/>
@@ -93,16 +93,16 @@ Content</string>
         <!--Side MenuVC-->
         <scene sceneID="qun-tI-Ks3">
             <objects>
-                <viewController id="Vzj-y9-Qab" customClass="SideMenuVC" customModule="SBSideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vzj-y9-Qab" customClass="SideMenuVC" customModule="sideMenu_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QsQ-bj-jg9">
-                        <rect key="frame" x="0.0" y="0.0" width="245" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="245" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVr-vE-W0o">
-                                <rect key="frame" x="0.0" y="64" width="245" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="245" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuCell" rowHeight="62" id="ZW1-WA-St7" customClass="SideMenuCell" customModule="SBSideMenu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuCell" rowHeight="62" id="ZW1-WA-St7" customClass="SideMenuCell" customModule="sideMenu_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="245" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZW1-WA-St7" id="c5a-IJ-HCW">
@@ -146,13 +146,13 @@ Content</string>
             </objects>
             <point key="canvasLocation" x="-119" y="937"/>
         </scene>
-        <!--Content Navigation-->
+        <!--Side Menu Content Navigation-->
         <scene sceneID="I3e-vK-NH9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wcv-FO-hyT" customClass="ContentNavigation" customModule="SBSideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wcv-FO-hyT" customClass="SideMenuContentNavigation" customModule="sideMenu_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="KYu-BX-JiC">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -169,11 +169,11 @@ Content</string>
             <objects>
                 <viewController storyboardIdentifier="SecondVC" id="Glr-Ao-E7e" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kqV-Aw-cqf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6A-20-kbe">
-                                <rect key="frame" x="60.5" y="229" width="200" height="110"/>
+                                <rect key="frame" x="87.5" y="278.5" width="200" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="DS7-fG-M2J"/>
                                     <constraint firstAttribute="height" constant="110" id="Ksv-XN-suM"/>
@@ -186,7 +186,7 @@ Content</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9a-OL-y7f">
-                                <rect key="frame" x="64" y="371" width="192" height="44"/>
+                                <rect key="frame" x="75" y="420.5" width="225" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.49411764705882355" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="q9c-0n-V1Q"/>
@@ -221,11 +221,11 @@ Content</string>
             <objects>
                 <viewController storyboardIdentifier="ThirdVC" id="XEF-iM-Y3O" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hfu-lF-Ip9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGW-sT-9a9">
-                                <rect key="frame" x="60.5" y="229" width="200" height="110"/>
+                                <rect key="frame" x="87.5" y="278.5" width="200" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="nrG-EN-v4k"/>
                                     <constraint firstAttribute="height" constant="110" id="v4I-wB-Zx1"/>
@@ -256,11 +256,11 @@ Content</string>
             <objects>
                 <viewController storyboardIdentifier="FourthVC" id="I5y-H1-rlJ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V8F-iq-vxE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKS-qV-efx">
-                                <rect key="frame" x="60.5" y="229" width="200" height="110"/>
+                                <rect key="frame" x="87.5" y="278.5" width="200" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="7qC-AL-5m8"/>
                                     <constraint firstAttribute="width" constant="200" id="BbA-s1-jnk"/>

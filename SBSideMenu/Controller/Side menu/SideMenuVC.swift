@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SideMenuSelectionItemDelegate {
+protocol SideMenuSelectionDelegate {
     func didSelectMenuItem(index: Int)
 }
 
@@ -31,7 +31,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
 
     private var items = ["First", "Second", "Third"]
-    public var customDelegate: SideMenuSelectionItemDelegate?
+    public var customDelegate: SideMenuSelectionDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
