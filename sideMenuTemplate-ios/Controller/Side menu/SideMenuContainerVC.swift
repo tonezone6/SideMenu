@@ -18,30 +18,26 @@ class SideMenuContainerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setSideMenuDelegates()
+        sideMenuVC.customDelegate = self
+        sideMenuContentNavigation.customDelegate = self
     }
 }
 
 extension SideMenuContainerVC: SideMenuDelegate {
     
-    //// Navigation setup here!
-    
     func didSelectMenuItem(index: Int) {
-        guard let contentNavigation = self.childViewControllers[1] as? SideMenuContentNavigation else {
-            return
-        }
         var vc: UIViewController!
+        /*
+         These are test vc.
+         Setup your content view controllers and manage side menu selection below: */
         switch index {
-        case 0:
-            vc = storyboard?.instantiateViewController(withIdentifier: "FirstVC")
-        case 1:
-            vc = storyboard?.instantiateViewController(withIdentifier: "SecondVC")
-        case 2:
-            vc = storyboard?.instantiateViewController(withIdentifier: "ThirdVC")
+        case 0: vc = storyboard?.instantiateViewController(withIdentifier: "FirstVC")
+        case 1: vc = storyboard?.instantiateViewController(withIdentifier: "SecondVC")
+        case 2: vc = storyboard?.instantiateViewController(withIdentifier: "ThirdVC")
         default: ()
         }
         toggleSideMenu()
-        contentNavigation.viewControllers = [vc]
+        sideMenuContentNavigation.viewControllers = [vc]
     }
 }
 
@@ -58,24 +54,15 @@ extension SideMenuContainerVC {
     
     //// Private
     
-    private var sideMenuVC: SideMenuVC? {
-        return childViewControllers[0] as? SideMenuVC
+    private var sideMenuVC: SideMenuVC {
+        return childViewControllers[0] as! SideMenuVC
     }
-    
-    private var sideMenuContentNavigation: SideMenuContentNavigation? {
-        return childViewControllers[1] as? SideMenuContentNavigation
-    }
-    
-    private func setSideMenuDelegates() {
-        guard let sideMenu = self.sideMenuVC, let contentNav = self.sideMenuContentNavigation else {
-            return
-        }
-        sideMenu.customDelegate = self
-        contentNav.customDelegate = self
+    private var sideMenuContentNavigation: SideMenuContentNavigation {
+        return childViewControllers[1] as! SideMenuContentNavigation
     }
     
     @objc private func toggleSideMenu() {
-        guard let contentNav = self.sideMenuContentNavigation, let rootView = contentNav.viewControllers.first?.view else { return }
+        guard let rootView = sideMenuContentNavigation.viewControllers.first?.view else { return }
         if isSideMenuOpen {
             sideMenuLeadingConstraint.constant = -sideMenuContainer.bounds.width
             rootView.isUserInteractionEnabled = true
