@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FABD2F911F8761F8008034B6"
-               BuildableName = "sideMenu-ios.app"
-               BlueprintName = "sideMenu-ios"
-               ReferencedContainer = "container:sideMenu-ios.xcodeproj">
+               BuildableName = "sideMenuTemplate-ios.app"
+               BlueprintName = "sideMenuTemplate-ios"
+               ReferencedContainer = "container:sideMenuTemplate-ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FABD2F911F8761F8008034B6"
-            BuildableName = "sideMenu-ios.app"
-            BlueprintName = "sideMenu-ios"
-            ReferencedContainer = "container:sideMenu-ios.xcodeproj">
+            BuildableName = "sideMenuTemplate-ios.app"
+            BlueprintName = "sideMenuTemplate-ios"
+            ReferencedContainer = "container:sideMenuTemplate-ios.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FABD2F911F8761F8008034B6"
-            BuildableName = "sideMenu-ios.app"
-            BlueprintName = "sideMenu-ios"
-            ReferencedContainer = "container:sideMenu-ios.xcodeproj">
+            BuildableName = "sideMenuTemplate-ios.app"
+            BlueprintName = "sideMenuTemplate-ios"
+            ReferencedContainer = "container:sideMenuTemplate-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FABD2F911F8761F8008034B6"
-            BuildableName = "sideMenu-ios.app"
-            BlueprintName = "sideMenu-ios"
-            ReferencedContainer = "container:sideMenu-ios.xcodeproj">
+            BuildableName = "sideMenuTemplate-ios.app"
+            BlueprintName = "sideMenuTemplate-ios"
+            ReferencedContainer = "container:sideMenuTemplate-ios.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

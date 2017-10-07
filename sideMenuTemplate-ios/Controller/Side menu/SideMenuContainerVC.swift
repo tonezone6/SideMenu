@@ -22,7 +22,7 @@ class SideMenuContainerVC: UIViewController {
     }
 }
 
-extension SideMenuContainerVC: SideMenuSelectionDelegate {
+extension SideMenuContainerVC: SideMenuDelegate {
     
     //// Navigation setup here!
     
@@ -34,13 +34,10 @@ extension SideMenuContainerVC: SideMenuSelectionDelegate {
         switch index {
         case 0:
             vc = storyboard?.instantiateViewController(withIdentifier: "FirstVC")
-            vc.navigationItem.title = "First"
         case 1:
             vc = storyboard?.instantiateViewController(withIdentifier: "SecondVC")
-            vc.navigationItem.title = "Second"
         case 2:
             vc = storyboard?.instantiateViewController(withIdentifier: "ThirdVC")
-            vc.navigationItem.title = "Third"
         default: ()
         }
         toggleSideMenu()
@@ -48,7 +45,7 @@ extension SideMenuContainerVC: SideMenuSelectionDelegate {
     }
 }
 
-extension SideMenuContainerVC: ContentNavigationDelegate {
+extension SideMenuContainerVC: SideMenuNavigationDelegate {
     
     //// Toggle event
     

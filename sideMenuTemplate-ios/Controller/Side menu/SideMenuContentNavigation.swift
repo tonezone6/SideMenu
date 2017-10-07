@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol ContentNavigationDelegate {
+protocol SideMenuNavigationDelegate {
     func didTappedToggleButton()
 }
 
 class SideMenuContentNavigation: UINavigationController {
     
-    var customDelegate: ContentNavigationDelegate?
+    var customDelegate: SideMenuNavigationDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,11 @@ extension SideMenuContentNavigation: UINavigationControllerDelegate {
         // Hide side menu btn in nav stack
         if let index = viewControllers.index(of: viewController), index > 0 {
             viewController.navigationItem.leftBarButtonItem = nil
+        }
+        
+        // Set vc navigation item title based on storyboard value
+        if let title = viewController.title {
+            viewController.navigationItem.title = title
         }
     }
     

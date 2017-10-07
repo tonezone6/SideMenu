@@ -8,11 +8,9 @@
 
 import UIKit
 
-protocol SideMenuSelectionDelegate {
-    func didSelectMenuItem(index: Int)
-}
-
 class SideMenuCell: UITableViewCell {
+    
+    //// Side menu custom cell
     
     @IBOutlet weak var menuItemLabel: UILabel!
     
@@ -26,12 +24,18 @@ class SideMenuCell: UITableViewCell {
     }
 }
 
-class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol SideMenuDelegate {
+    /*
+     Inform side menu container VC about menu item selection */
+    func didSelectMenuItem(index: Int)
+}
+
+class SideMenuVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
 
-    private var items = ["First", "Second", "Third"]
-    public var customDelegate: SideMenuSelectionDelegate?
+    var items = ["First", "Second", "Third"]
+    var customDelegate: SideMenuDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +43,16 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
     }
+}
 
+extension SideMenuVC: UITableViewDataSource {
+    
+    //// Table view data source
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -53,6 +62,11 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.setCell(menuItem: items[indexPath.row])
         return cell
     }
+}
+
+extension SideMenuVC: UITableViewDelegate {
+    
+    //// Table view delegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
